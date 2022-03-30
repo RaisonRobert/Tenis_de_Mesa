@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bemVindo">
+
+    <fragment
+        android:id="@+id/bemVindo"
+        android:name="com.tcc.tenisdemesa.fragment.FragmentBemVindo"
+        android:label="Bem Vindo"
+        tools:layout="@layout/layout_fragment_bem_vindo"
+        />
+</navigation>
