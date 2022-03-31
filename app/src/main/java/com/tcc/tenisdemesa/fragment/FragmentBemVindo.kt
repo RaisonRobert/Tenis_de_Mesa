@@ -1,6 +1,8 @@
 package com.tcc.tenisdemesa.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,17 +27,32 @@ class FragmentBemVindo : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTextInicial(view)
-        view.btn_bemvindo.setOnClickListener{
-            findNavController().navigate(R.id.action_bemVindo_to_home)
-            findNavController().popBackStack(R.id.home, false)
-        }
+        activity?.title = ""
+        time()
     }
 
-    //    @SuppressLint("SetTextI18n")
+    private fun time() {
+        val timer = object : CountDownTimer(3000, 1000) {
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+//                view.timeToken.text =
+//                    "Enviar novamente em " + millisUntilFinished / 1000 + " Segundos"
+            }
+
+            override fun onFinish() {
+                findNavController().navigate(R.id.action_bemVindo_to_home)
+                findNavController().popBackStack(R.id.home, false)
+
+            }
+
+        }
+        timer.start()
+    }
+
     private fun setTextInicial(view: View) {
-        view.textViewTitulo.text= "Bem Vindo\n ao \nTennis Stats"
+        view.textViewTitulo.text = "Bem Vindo\n ao \nTennis Stats"
         view.textViewSubtitulo.text = "Boa Noite"
         view.textViewSaudacao.text = "Seja bem vindo"
-        view.textViewFrase.text ="Somos a maior liga de aposta do norte do Amazonas"
+        view.textViewFrase.text = "Somos a maior liga de aposta do norte do Amazonas"
     }
 }

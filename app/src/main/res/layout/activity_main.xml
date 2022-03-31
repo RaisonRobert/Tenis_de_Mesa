@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
     <fragment
-        android:id="@+id/nav_host_fragment_cadastro"
+        android:id="@+id/nav_host_fragment_home"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

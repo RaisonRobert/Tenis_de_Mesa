@@ -69,16 +69,4 @@
         app:srcCompat="@mipmap/ic_logo"
        />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_bemvindo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:text="Continuar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textViewFrase"
-        app:layout_constraintStart_toStartOf="@+id/textViewFrase"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFrase" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
