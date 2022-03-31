@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.tcc.tenisdemesa.R
 import kotlinx.android.synthetic.main.layout_fragment_bem_vindo.view.*
 
@@ -24,6 +25,10 @@ class FragmentBemVindo : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTextInicial(view)
+        view.btn_bemvindo.setOnClickListener{
+            findNavController().navigate(R.id.action_bemVindo_to_home)
+            findNavController().popBackStack(R.id.home, false)
+        }
     }
 
     //    @SuppressLint("SetTextI18n")
