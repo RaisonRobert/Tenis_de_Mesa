@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tcc.tenisdemesa.R
+import com.tcc.tenisdemesa.`object`.Salvar
+import com.tcc.tenisdemesa.model.DadosLiga
 import kotlinx.android.synthetic.main.layout_fragment_bem_vindo.view.*
 
 class FragmentBemVindo : Fragment() {
@@ -30,6 +32,8 @@ class FragmentBemVindo : Fragment() {
         activity?.title = ""
         time()
     }
+
+
 
     private fun time() {
         val timer = object : CountDownTimer(3000, 1000) {

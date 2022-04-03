@@ -7,7 +7,16 @@
     <fragment android:id="@+id/home"
         android:name="com.tcc.tenisdemesa.fragment.FragmentHome"
         android:label="Home"
-        tools:layout="@layout/layout_fragment_home"/>
+        tools:layout="@layout/layout_fragment_home">
+        <action
+            android:id="@+id/action_home_to_listadeLigas"
+            app:destination="@id/listadeLigas"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/listadeLigas" />
+    </fragment>
     <fragment
         android:id="@+id/bemVindo"
         android:name="com.tcc.tenisdemesa.fragment.FragmentBemVindo"
@@ -17,9 +26,29 @@
         <action
             android:id="@+id/action_bemVindo_to_home"
             app:destination="@id/home"
-            app:launchSingleTop="false"
-            app:popUpTo="@id/home"
-            app:popUpToInclusive="true" />
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/home" />
     </fragment>
+    <fragment android:id="@+id/listadeLigas"
+        android:name="com.tcc.tenisdemesa.fragment.FragmentLigas"
+        android:label="Lista de Ligas"
+        tools:layout="@layout/layout_fragment_lista_de_ligas">
+        <action
+            android:id="@+id/action_listadeLigas_to_listaTimesApostas"
+            app:destination="@id/listaTimesApostas"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/listaTimesApostas" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaTimesApostas"
+        android:name="com.tcc.tenisdemesa.fragment.FragmentTimesApostas"
+        android:label="Lista de Times para Apostas"
+        tools:layout="@layout/layout_fragment_lista_times_apostas"/>
 
 </navigation>
