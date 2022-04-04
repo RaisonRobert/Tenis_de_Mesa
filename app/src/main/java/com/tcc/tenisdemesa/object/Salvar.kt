@@ -1,6 +1,7 @@
 package com.tcc.tenisdemesa.`object`
 
 import com.tcc.tenisdemesa.R
+import com.tcc.tenisdemesa.model.DadosEscolherTime
 import com.tcc.tenisdemesa.model.DadosLiga
 import com.tcc.tenisdemesa.model.DadosTime
 import com.tcc.tenisdemesa.model.DadosTimesApostas
@@ -8,14 +9,15 @@ import com.tcc.tenisdemesa.model.DadosTimesApostas
 object Salvar {
 
 
-    val dadosLiga1 =(
+    const val i: Boolean = false
+    val dadosLiga1 = (
             DadosLiga(
                 nome = "Commonwealth de Birmingham",
                 descricao = "Os Jogos da Commonwealth reúnem as nações. O evento é realizados a 4 quatro anos.",
                 data = "17 de Abril"
             )
             )
-    val dadosLiga2 =(
+    val dadosLiga2 = (
             DadosLiga(
                 nome = "TMB Platinum",
                 descricao = "Este é um campeonato Brasileiro de Tênis de Mesa",
@@ -38,10 +40,11 @@ object Salvar {
         nome = "Time Preto",
         color = R.color.black
     ))
-    private  var estatistica1: Float = 1.0f
-    private  var estatistica2: Float = 2.0f
-    private  var estatistica3: Float = 3.0f
-    private  var estatistica4: Float = 4.0f
+    private var estatistica1: Float = 1.0f
+    private var estatistica2: Float = 2.0f
+    private var estatistica3: Float = 3.0f
+    private var estatistica4: Float = 4.0f
+    //timeCampeonato1 usado para jogo mais recente
     val timesCampeonato1 = (DadosTimesApostas(
         time1 = time1.nome,
         time2 = time2.nome,
@@ -108,10 +111,10 @@ object Salvar {
         cor1 = time3.color,
         cor2 = time4.color
     ))
-    private  var estatistica7: Float = 1.0f
-    private  var estatistica8: Float = 2.0f
-    private  var estatistica9: Float = 3.0f
-    private  var estatistica10: Float = 4.0f
+    private var estatistica7: Float = 1.0f
+    private var estatistica8: Float = 2.0f
+    private var estatistica9: Float = 3.0f
+    private var estatistica10: Float = 4.0f
     private val timesCampeonato7 = (DadosTimesApostas(
         time1 = time1.nome,
         time2 = time2.nome,
@@ -195,4 +198,6 @@ object Salvar {
         timesCampeonato11,
         timesCampeonato12
     )
+    lateinit var escolhaTimeAposta: DadosEscolherTime
+
 }

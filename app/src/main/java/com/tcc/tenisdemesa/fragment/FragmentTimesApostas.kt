@@ -4,13 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tcc.tenisdemesa.R
 import com.tcc.tenisdemesa.`object`.Salvar
 import com.tcc.tenisdemesa.adapter.RecyclerViewLigasAdapter
 import com.tcc.tenisdemesa.adapter.RecyclerViewTimesApostasAdapter
+import com.tcc.tenisdemesa.model.DadosEscolherTime
 import com.tcc.tenisdemesa.model.DadosLiga
 import com.tcc.tenisdemesa.model.DadosTimesApostas
 
@@ -50,15 +53,24 @@ class FragmentTimesApostas: Fragment(), RecyclerViewTimesApostasAdapter.itemClic
         adapterLista.apply {
             itemListener = object :
                 RecyclerViewTimesApostasAdapter.itemClickListener{
-                override fun itemClick(dado: DadosTimesApostas, position: Int) {
-
+                override fun itemClick(dado: DadosTimesApostas, btnApostar: Button, position: Int) {
+                    btnApostar.setOnClickListener{
+                        val escolha = (DadosEscolherTime(
+                            timeA = dado.time1,
+                            timeB = dado.time2,
+                            cor1 = dado.cor1,
+                            cor2 = dado.cor2
+                        ))
+                        Salvar.escolhaTimeAposta = escolha
+                        findNavController().navigate(R.id.action_listaTimesApostas_to_escolhaTimeAposta)
+                    }
                 }
             }
         }
 
     }
 
-    override fun itemClick(dado: DadosTimesApostas, position: Int) {
+    override fun itemClick(dado: DadosTimesApostas, btnApostar: Button, position: Int) {
         TODO("Not yet implemented")
     }
 }

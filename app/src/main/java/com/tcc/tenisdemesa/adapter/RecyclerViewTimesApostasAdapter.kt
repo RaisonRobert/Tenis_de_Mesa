@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.tcc.tenisdemesa.R
 import com.tcc.tenisdemesa.`object`.Salvar
@@ -21,7 +22,7 @@ class RecyclerViewTimesApostasAdapter(var clickListener: itemClickListener) :
     var itemListener: itemClickListener? = null
 
     interface itemClickListener {
-        fun itemClick(dado: DadosTimesApostas, position: Int)
+        fun itemClick(dado: DadosTimesApostas, btnApostar: Button ,position: Int)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -54,7 +55,7 @@ class RecyclerViewTimesApostasAdapter(var clickListener: itemClickListener) :
         val listr = listar[position]
         holder.bindView(listr, clickListener)
         holder.let {
-            itemListener?.itemClick(listar[position], position)
+            itemListener?.itemClick(listar[position],it.itemView.btnApostar, position)
         }
     }
 

@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tcc.tenisdemesa.R
 import com.tcc.tenisdemesa.`object`.Salvar
-import kotlinx.android.synthetic.main.item_fragment_lista_times_apostas.view.*
+import com.tcc.tenisdemesa.model.DadosEscolherTime
+import kotlinx.android.synthetic.main.layout_fragment_home.*
 import kotlinx.android.synthetic.main.layout_fragment_home.view.*
 
 class FragmentHome : Fragment() {
@@ -27,8 +28,10 @@ class FragmentHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = "Tennis Stats"
+        btn_veraposta.isEnabled = false
         proximaPartida(view)
         botoes(view)
+
 
     }
 
@@ -48,14 +51,25 @@ class FragmentHome : Fragment() {
     private fun botoes(view: View) {
         view.pbtnApostar.setOnClickListener {
 //            direto para tela de aposta
+            val escolha = (DadosEscolherTime(
+                timeA = Salvar.timesCampeonato1.time1.toString(),
+                timeB = Salvar.timesCampeonato1.time2.toString(),
+                cor1 = Salvar.timesCampeonato1.cor1,
+                cor2 = Salvar.timesCampeonato1.cor2
+            ))
+            Salvar.escolhaTimeAposta = escolha
+            findNavController().navigate(R.id.action_home_to_escolhaTimeAposta)
         }
 //        chama o Fragment das ligas
         view.btn_liga.setOnClickListener {
             findNavController().navigate(R.id.action_home_to_listadeLigas)
         }
-//        chama o Fragment dos times para aposta
-        view.btn_aposta.setOnClickListener {
-            view.btn_aposta.setBackgroundResource(R.color.black)
+//        chama o Fragment escolher o times para aposta
+        if (Salvar.i) {
+            btn_veraposta.isEnabled = true
+            view.btn_veraposta.setOnClickListener {
+//                view.btn_veraposta.setBackgroundResource(R.color.black)
+            }
         }
     }
 }

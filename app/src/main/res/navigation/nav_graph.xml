@@ -16,6 +16,14 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/listadeLigas" />
+        <action
+            android:id="@+id/action_home_to_escolhaTimeAposta"
+            app:destination="@id/escolhaTimeAposta"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/escolhaTimeAposta"/>
     </fragment>
     <fragment
         android:id="@+id/bemVindo"
@@ -49,6 +57,20 @@
         android:id="@+id/listaTimesApostas"
         android:name="com.tcc.tenisdemesa.fragment.FragmentTimesApostas"
         android:label="Lista de Times para Apostas"
-        tools:layout="@layout/layout_fragment_lista_times_apostas"/>
+        tools:layout="@layout/layout_fragment_lista_times_apostas">
+        <action
+            android:id="@+id/action_listaTimesApostas_to_escolhaTimeAposta"
+            app:destination="@id/escolhaTimeAposta"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/escolhaTimeAposta" />
+    </fragment>
+    <fragment
+        android:id="@+id/escolhaTimeAposta"
+        android:name="com.tcc.tenisdemesa.fragment.FragmentSelecionaTimesAposta"
+        tools:layout="@layout/layout_fragment_seleciona_times_aposta"
+        />
 
 </navigation>
