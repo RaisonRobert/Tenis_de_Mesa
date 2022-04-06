@@ -11,13 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tcc.tenisdemesa.R
 import com.tcc.tenisdemesa.`object`.Salvar
-import com.tcc.tenisdemesa.adapter.RecyclerViewLigasAdapter
 import com.tcc.tenisdemesa.adapter.RecyclerViewTimesApostasAdapter
+import com.tcc.tenisdemesa.model.DadosApostaCard
 import com.tcc.tenisdemesa.model.DadosEscolherTime
-import com.tcc.tenisdemesa.model.DadosLiga
 import com.tcc.tenisdemesa.model.DadosTimesApostas
 
-class FragmentTimesApostas: Fragment(), RecyclerViewTimesApostasAdapter.itemClickListener {
+class FragmentTimesApostas : Fragment(), RecyclerViewTimesApostasAdapter.itemClickListener {
     private lateinit var recycler_lista: RecyclerView
     private lateinit var adapterLista: RecyclerViewTimesApostasAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +38,11 @@ class FragmentTimesApostas: Fragment(), RecyclerViewTimesApostasAdapter.itemClic
         setupRecyclerView(view)
         addDados()
     }
+
     private fun addDados() {
         if (Salvar.campeonatoSelecionado == Salvar.dadosLiga1.nome) {
             adapterLista.popularLista(Salvar.arquivosDadosTimesApostas1)
-        }else adapterLista.popularLista(Salvar.arquivosDadosTimesApostas2)
+        } else adapterLista.popularLista(Salvar.arquivosDadosTimesApostas2)
     }
 
     private fun setupRecyclerView(view: View) {
@@ -52,16 +52,30 @@ class FragmentTimesApostas: Fragment(), RecyclerViewTimesApostasAdapter.itemClic
         recycler_lista.adapter = adapterLista
         adapterLista.apply {
             itemListener = object :
-                RecyclerViewTimesApostasAdapter.itemClickListener{
+                RecyclerViewTimesApostasAdapter.itemClickListener {
                 override fun itemClick(dado: DadosTimesApostas, btnApostar: Button, position: Int) {
-                    btnApostar.setOnClickListener{
+                    btnApostar.setOnClickListener {
                         val escolha = (DadosEscolherTime(
                             timeA = dado.time1,
                             timeB = dado.time2,
+                            cotaA = dado.cota1,
+                            cotaB = dado.cota2,
                             cor1 = dado.cor1,
                             cor2 = dado.cor2
                         ))
                         Salvar.escolhaTimeAposta = escolha
+                        val apostaCards = (DadosApostaCard(
+                            time1 = dado.time1,
+                            time2 = dado.time2,
+                            cota1 = dado.cota1,
+                            cota2 = dado.cota2,
+                            dataJogo = dado.dataJogo,
+                            anoJogo = dado.anoJogo,
+                            horaJogo = dado.horaJogo,
+                            cor1 = dado.cor1,
+                            cor2 = dado.cor2
+                        ))
+                        Salvar.apostaCard = apostaCards
                         findNavController().navigate(R.id.action_listaTimesApostas_to_escolhaTimeAposta)
                     }
                 }

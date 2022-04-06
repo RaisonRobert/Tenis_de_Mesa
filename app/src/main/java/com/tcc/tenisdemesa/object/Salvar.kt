@@ -1,13 +1,9 @@
 package com.tcc.tenisdemesa.`object`
 
 import com.tcc.tenisdemesa.R
-import com.tcc.tenisdemesa.model.DadosEscolherTime
-import com.tcc.tenisdemesa.model.DadosLiga
-import com.tcc.tenisdemesa.model.DadosTime
-import com.tcc.tenisdemesa.model.DadosTimesApostas
+import com.tcc.tenisdemesa.model.*
 
 object Salvar {
-
 
     const val i: Boolean = false
     val dadosLiga1 = (
@@ -181,6 +177,7 @@ object Salvar {
         cor1 = time3.color,
         cor2 = time4.color
     ))
+    lateinit var apostaCard: DadosApostaCard
     var arquivosDadosLigas: MutableList<DadosLiga> = mutableListOf(dadosLiga1, dadosLiga2)
     lateinit var campeonatoSelecionado: String
     val arquivosDadosTimesApostas1: MutableList<DadosTimesApostas> = mutableListOf(
@@ -199,5 +196,5 @@ object Salvar {
         timesCampeonato12
     )
     lateinit var escolhaTimeAposta: DadosEscolherTime
-
+    lateinit var aposta : DadosAposta
 }

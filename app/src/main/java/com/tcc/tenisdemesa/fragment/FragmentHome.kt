@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tcc.tenisdemesa.R
 import com.tcc.tenisdemesa.`object`.Salvar
+import com.tcc.tenisdemesa.model.DadosApostaCard
 import com.tcc.tenisdemesa.model.DadosEscolherTime
 import kotlinx.android.synthetic.main.layout_fragment_home.*
 import kotlinx.android.synthetic.main.layout_fragment_home.view.*
@@ -54,10 +55,25 @@ class FragmentHome : Fragment() {
             val escolha = (DadosEscolherTime(
                 timeA = Salvar.timesCampeonato1.time1.toString(),
                 timeB = Salvar.timesCampeonato1.time2.toString(),
+                cotaA = Salvar.timesCampeonato1.cota1,
+                cotaB = Salvar.timesCampeonato1.cota2,
                 cor1 = Salvar.timesCampeonato1.cor1,
                 cor2 = Salvar.timesCampeonato1.cor2
             ))
+            Salvar.campeonatoSelecionado = Salvar.dadosLiga1.nome
             Salvar.escolhaTimeAposta = escolha
+            val apostaCards = (DadosApostaCard(
+                time1 = Salvar.timesCampeonato1.time1,
+                time2 = Salvar.timesCampeonato1.time2,
+                cota1 = Salvar.timesCampeonato1.cota1,
+                cota2 = Salvar.timesCampeonato1.cota2,
+                dataJogo = Salvar.timesCampeonato1.dataJogo,
+                anoJogo = Salvar.timesCampeonato1.anoJogo,
+                horaJogo = Salvar.timesCampeonato1.horaJogo,
+                cor1 = Salvar.timesCampeonato1.cor1,
+                cor2 = Salvar.timesCampeonato1.cor2
+            ))
+            Salvar.apostaCard = apostaCards
             findNavController().navigate(R.id.action_home_to_escolhaTimeAposta)
         }
 //        chama o Fragment das ligas

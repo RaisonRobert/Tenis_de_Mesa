@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/aimageButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/nullcolor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/atextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="0,66% de Vencer"
+        app:layout_constraintEnd_toEndOf="@+id/aimageButton"
+        app:layout_constraintStart_toStartOf="@+id/aimageButton"
+        app:layout_constraintTop_toBottomOf="@+id/aimageButton" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/acardViewProximoJogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/atextView2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/atextViewTime1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="TIME 1"
+                android:textAlignment="center"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/aimageButtonTime2"
+                app:layout_constraintEnd_toStartOf="@+id/atextViewVS"
+                app:layout_constraintStart_toEndOf="@+id/aimageButtonTime2"
+                app:layout_constraintTop_toTopOf="@+id/aimageButtonTime2" />
+
+            <ImageButton
+                android:id="@+id/aimageButtonTime1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/aimageButtonTime2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/aimageButtonTime1"
+                app:layout_constraintStart_toEndOf="@+id/aimageButtonTime1"
+                app:layout_constraintTop_toTopOf="@+id/aimageButtonTime1"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/atextViewVS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="VS"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/atextViewTime1"
+                app:layout_constraintEnd_toStartOf="@+id/atextViewTime2"
+                app:layout_constraintTop_toTopOf="@+id/atextViewTime1" />
+
+            <TextView
+                android:id="@+id/atextViewTime2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="TIME 2"
+                android:textAlignment="center"
+                android:textColor="@color/purple_500"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/atextViewVS"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/atextViewVS" />
+
+            <ImageView
+                android:id="@+id/aimageViewCalendario"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:foreground="@drawable/ic_baseline_calendar_month_24"
+                app:layout_constraintBottom_toTopOf="@+id/atextViewHora"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aimageButtonTime1" />
+
+            <TextView
+                android:id="@+id/atextViewData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="31 de Março"
+                app:layout_constraintStart_toEndOf="@+id/aimageViewCalendario"
+                app:layout_constraintTop_toTopOf="@+id/aimageViewCalendario" />
+
+            <TextView
+                android:id="@+id/atextViewAno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2022"
+                app:layout_constraintStart_toStartOf="@+id/atextViewData"
+                app:layout_constraintTop_toBottomOf="@+id/atextViewData" />
+
+            <ImageView
+                android:id="@+id/aimageViewCampeonado"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:foreground="@drawable/ic_baseline_wine_bar_24"
+                app:layout_constraintBottom_toBottomOf="@+id/aimageViewCalendario"
+                app:layout_constraintStart_toEndOf="@+id/atextViewData"
+                app:layout_constraintTop_toTopOf="@+id/aimageViewCalendario" />
+
+            <TextView
+                android:id="@+id/atextViewCampeonado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Tennis Champions"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/aimageViewCampeonado"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aimageViewCampeonado"
+                app:layout_constraintTop_toTopOf="@+id/aimageViewCampeonado" />
+
+            <TextView
+                android:id="@+id/atextViewCota1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="50%"
+                android:textAlignment="center"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/aimageViewCampeonado"
+                app:layout_constraintEnd_toEndOf="@+id/atextViewTime1"
+                app:layout_constraintStart_toStartOf="@+id/atextViewTime1"
+                app:layout_constraintTop_toBottomOf="@+id/atextViewTime1" />
+
+            <TextView
+                android:id="@+id/atextViewCota2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="50%"
+                android:textAlignment="center"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/aimageViewCampeonado"
+                app:layout_constraintEnd_toEndOf="@+id/atextViewTime2"
+                app:layout_constraintStart_toEndOf="@+id/atextViewVS"
+                app:layout_constraintStart_toStartOf="@+id/atextViewTime2"
+                app:layout_constraintTop_toBottomOf="@+id/atextViewTime2" />
+
+            <TextView
+                android:id="@+id/atextViewHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="00:00:00"
+                android:textColor="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/acardAposta"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acardViewProximoJogo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/abuttonConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="CONFIRMAR"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/atextViewCotaAposta" />
+
+            <TextView
+                android:id="@+id/atextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Valor Apostado"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/aeditTextValorAposta"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/anomeTimeAposta" />
+
+            <TextView
+                android:id="@+id/atextView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+
+                android:text="Valor da Cota"
+                app:layout_constraintEnd_toEndOf="@+id/atextView"
+                app:layout_constraintStart_toStartOf="@+id/atextView"
+                app:layout_constraintTop_toBottomOf="@+id/aeditTextValorAposta" />
+
+            <TextView
+                android:id="@+id/atextViewCotaAposta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_200"
+                android:layout_marginTop="20dp"
+                android:text="Numero Cota"
+                app:layout_constraintEnd_toEndOf="@+id/aeditTextValorAposta"
+                app:layout_constraintStart_toStartOf="@+id/aeditTextValorAposta"
+                app:layout_constraintTop_toBottomOf="@+id/aeditTextValorAposta" />
+
+            <EditText
+                android:id="@+id/aeditTextValorAposta"
+                android:layout_width="153dp"
+                android:layout_height="41dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:hint="Digite Sua Aposta"
+                android:inputType="number"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/atextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/atextView" />
+
+            <TextView
+                android:id="@+id/anomeTimeAposta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:text="Nome do TIME"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
